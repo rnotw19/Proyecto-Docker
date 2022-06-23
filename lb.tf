@@ -8,7 +8,7 @@ resource "aws_lb" "test" {
   subnets            = data.aws_subnet_ids.subnet.ids
  
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
   tags = {
     Name  = "AWS_LB"
