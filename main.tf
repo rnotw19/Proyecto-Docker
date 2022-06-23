@@ -75,13 +75,13 @@ resource "aws_launch_template" "foobar" {
 
   name = "launch-terraform-ron"
   description = "Launch template creado con terraform"
-  security_group_names = ["SG_AWS_Terraform"]
+  security_group_names = ["SG_AWS_Pmario"]
   key_name ="LLave-Ronmel"
   image_id      = "ami-0022f774911c1d690"
   instance_type = "t2.micro"
   tags = {
     Estudiante = "Ronmel"
-    Name = "Tarea-Terraform_user"
+    Name = "Terraform_user"
   }
   
    user_data = "${filebase64("Userdata.sh")}"
