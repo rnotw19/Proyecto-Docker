@@ -54,7 +54,7 @@ resource "aws_security_group" "Allow_all" {
 
 resource "aws_autoscaling_group" "bar" {
  name = "AG-terraform-ron"
-  availability_zones = ["us-east-1a","us-east-1b","us-east-1c","us-east-1d","us-east-1e","us-east-1f"]
+  availability_zones = ["us-east-1a","us-east-1b","us-east-1c"]
   desired_capacity   = 1
   max_size           = 4
   min_size           = 1
@@ -85,22 +85,5 @@ resource "aws_launch_template" "foobar" {
   }
   
    user_data = "${filebase64("Userdata.sh")}"
-}
-
-
-resource "aws_lb" "test" {
-  name               = "LB-APPmario"
-  internal           = false
-  load_balancer_type = "application"
-  security_groups    = [aws_security_group.Allow_all.id]
-  subnets            = [data.aws_availability_zones.available.id]
-
-  enable_deletion_protection = true
-
-  tags = {
-    Name  = "AWS_LB"
-  Environment = "production"
-     }
-
 }
 
