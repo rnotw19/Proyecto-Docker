@@ -36,7 +36,7 @@ type = "forward"
 }
 resource "aws_lb_target_group" "t_group" {
     name = "tg-Proyecto-ron"
-    port = 9600
+    port = 8600
     protocol = "HTTP"
     vpc_id=data.aws_vpc.default.id
     
